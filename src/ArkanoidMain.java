@@ -31,8 +31,10 @@ public class ArkanoidMain {
             }
         }
 
-        boolean escapePressed = StdDraw.isKeyPressed(27);
-        while (!escapePressed) {
+        while (true) {
+            // Hold "Escape" to pause the game
+            if (StdDraw.isKeyPressed(27)) continue;
+
             StdDraw.clear();
 
             // Update shapes
