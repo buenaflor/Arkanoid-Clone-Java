@@ -26,15 +26,15 @@ public abstract class Shape {
         return color;
     }
 
+    public boolean isIntersecting(Shape other) {
+        return this.right() >= other.left() && this.left() <= other.right() && this.bottom() >= other.top() && this.top() <= other.bottom();
+    }
+
     public abstract void draw();
     public abstract float right();
     public abstract float left();
     public abstract float top();
     public abstract float bottom();
-
-    public boolean isIntersecting(Shape other) {
-        return this.right() >= other.left() && this.left() <= other.right() && this.bottom() >= other.top() && this.top() <= other.bottom();
-    }
 }
 
 class RectangleShape extends Shape {
